@@ -1,11 +1,9 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component} from 'react';
 import Header from "../header/header";
 import UseScript from "../hooks/useScript";
 import Cart from "../cart/cart";
-import WelcomArea from "../welcom-area/welcom-area";
-import TopCategory from "../top-category/top-category";
-import NewArrivals from "../new-arrivals/new-arrivals";
-import Brands from "../brands/brands";
+import Home from "../pages/home/home";
+import {Route, BrowserRouter as Router, Switch} from "react-router-dom";
 
 class App extends Component {
 
@@ -13,15 +11,19 @@ class App extends Component {
     render() {
 
         return (
-            <Fragment>
+            <Router>
                 <Header/>
                 <Cart/>
-                <WelcomArea/>
-                <TopCategory/>
-                <NewArrivals/>
-                <Brands/>
+                <Switch >
+                    <Route exact path={"/"}>
+                        <Home/>
+                    </Route>
+                    <Route exact path={"/Register"}>
+
+                    </Route>
+                </Switch>
                 <UseScript url={"js/active.js"}/>
-            </Fragment>
+            </Router>
         );
     }
 }

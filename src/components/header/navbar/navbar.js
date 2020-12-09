@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import NavbarShopCategory from "./navbar-shop-category/navbar-shop-category.";
+import {NavLink} from "react-router-dom";
+import {Button} from "react-bootstrap";
+import Register from "../../register/register";
 
 class Navbar extends Component {
     render() {
@@ -21,16 +23,8 @@ class Navbar extends Component {
 
                     <div className="classynav">
                         <ul>
-                            <li><a href="#">Shop</a>
-                                <div className="megamenu">
-                                    <NavbarShopCategory/>
-                                    <NavbarShopCategory/>
-                                    <NavbarShopCategory/>
-                                    <div className="single-mega cn-col-4">
-                                        <img src="img/bg-img/bg-6.jpg" alt=""/>
-                                    </div>
-                                </div>
-                            </li>
+                            <li><NavLink to={"/"}>Home</NavLink></li>
+                            <li><Button to={"/Register"} className="btn-outline-info" onClick={Register}>Register</Button></li>
                             <li><a href="#">Pages</a>
                                 <ul className="dropdown">
                                     <li><a href="index.html">Home</a></li>
